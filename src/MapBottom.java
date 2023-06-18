@@ -59,7 +59,7 @@ public class MapBottom {
         for(int i = 1; i <= GameUtil.MAP_W; i++){
             for(int j = 1; j <= GameUtil.MAP_H; j++){
                 if(GameUtil.DATA_BOTTOM[i][j] >= 0) {
-                    g.drawImage(GameUtil.numbers[GameUtil.DATA_BOTTOM[i][j]],
+                    g.drawImage(GameUtil.min_num[GameUtil.DATA_BOTTOM[i][j]],
                             GameUtil.OFFSET + (i - 1) * GameUtil.SQUARE_LENGTH,
                             5 * GameUtil.OFFSET + (j - 1) * GameUtil.SQUARE_LENGTH,
                             GameUtil.SQUARE_LENGTH,
@@ -68,6 +68,31 @@ public class MapBottom {
                 }
             }
         }
+
+        g.drawImage(GameUtil.nums_background,
+                (int)( GameUtil.OFFSET * 1.5 ),
+                (int)( GameUtil.OFFSET * 1.5 ),
+                (int) (1.0 * 173 / 108 * GameUtil.OFFSET * 2),
+                GameUtil.OFFSET * 2,
+                null);
+        g.drawImage(GameUtil.numbers[(GameUtil.MINE_NUM-GameUtil.FLAG_NUM) / 100],
+                (int)( GameUtil.OFFSET * 1.5 ) + 3 * GameUtil.RATE,
+                (int)( GameUtil.OFFSET * 1.5 ) + 4 * GameUtil.RATE,
+                (int) (1.0*52/99 * GameUtil.OFFSET * 2) - 4 * GameUtil.RATE,
+                GameUtil.OFFSET * 2 - 8 * GameUtil.RATE,
+                null);
+        g.drawImage(GameUtil.numbers[(GameUtil.MINE_NUM-GameUtil.FLAG_NUM) % 100 / 10],
+                (int)( GameUtil.OFFSET * 1.5 ) + 2 * GameUtil.RATE + (int) (1.0*52/99 * GameUtil.OFFSET * 2),
+                (int)( GameUtil.OFFSET * 1.5 ) + 4 * GameUtil.RATE,
+                (int) (1.0*52/99 * GameUtil.OFFSET * 2) - 4 * GameUtil.RATE,
+                GameUtil.OFFSET * 2 - 8 * GameUtil.RATE,
+                null);
+        g.drawImage(GameUtil.numbers[(GameUtil.MINE_NUM-GameUtil.FLAG_NUM) % 10],
+                (int)( GameUtil.OFFSET * 1.5 ) + 2 * GameUtil.RATE + (int) (1.0*52/99 * GameUtil.OFFSET * 4),
+                (int)( GameUtil.OFFSET * 1.5 ) + 4 * GameUtil.RATE,
+                (int) (1.0*52/99 * GameUtil.OFFSET * 2) - 4 * GameUtil.RATE,
+                GameUtil.OFFSET * 2 - 8 * GameUtil.RATE,
+                null);
 
         switch (GameUtil.state){
             case 0:

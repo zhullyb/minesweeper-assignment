@@ -10,6 +10,8 @@ public class GameUtil {
     static int OFFSET = 20 * RATE;
     static int SQUARE_LENGTH = 25 * RATE;
 
+    static int FLAG_NUM = 0;
+
     static int MOUSE_X;
     static int MOUSE_Y;
     static boolean LEFT_CLICK = false;
@@ -44,10 +46,17 @@ public class GameUtil {
     static Image face_unpressed = Toolkit.getDefaultToolkit().getImage("resources/face_unpressed.png");
     static Image face_lose = Toolkit.getDefaultToolkit().getImage("resources/face_lose.png");
     static Image face_win = Toolkit.getDefaultToolkit().getImage("resources/face_win.png");
-    static Image[] numbers = new Image[9];
+    static Image nums_background = Toolkit.getDefaultToolkit().getImage("resources/nums_background.png");
+    static Image[] min_num = new Image[9];
     static {
         for(int i = 0; i < 9; i++){
-            numbers[i] = Toolkit.getDefaultToolkit().getImage("resources/type" + i + ".png");
+            min_num[i] = Toolkit.getDefaultToolkit().getImage("resources/type" + i + ".png");
+        }
+    }
+    static Image[] numbers = new Image[10];
+    static {
+        for (int i = 0; i < 10; i++){
+            numbers[i] = Toolkit.getDefaultToolkit().getImage("resources/d" + i + ".png");
         }
     }
 

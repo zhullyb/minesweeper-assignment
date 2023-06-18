@@ -47,6 +47,7 @@ public class GameWin extends JFrame {
                                     e.getY() < (int) ( GameUtil.OFFSET * 1.5 ) + 2 * GameUtil.OFFSET){
                                 mapBottom.reGame();
                                 mapTop.reGame();
+                                GameUtil.FLAG_NUM = 0;
                                 GameUtil.state = 0;
                             }
                         }
