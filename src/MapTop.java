@@ -15,7 +15,7 @@ public class MapTop {
     void logic(){
         temp_x = 0;
         temp_y = 0;
-        if(GameUtil.MOUSE_X > GameUtil.OFFSET && GameUtil.MOUSE_Y > GameUtil.OFFSET * 5) {
+        if( GameUtil.state <= 0 && GameUtil.MOUSE_X > GameUtil.OFFSET && GameUtil.MOUSE_Y > GameUtil.OFFSET * 5) {
             temp_x = (GameUtil.MOUSE_X - GameUtil.OFFSET) / GameUtil.SQUARE_LENGTH + 1;
             temp_y = (GameUtil.MOUSE_Y - 5 * GameUtil.OFFSET) / GameUtil.SQUARE_LENGTH + 1;
         }
