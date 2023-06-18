@@ -8,6 +8,8 @@ public class GameWin extends JFrame {
     int width = GameUtil.OFFSET * 2 + GameUtil.MAP_W * GameUtil.SQUARE_LENGTH;
     int height = GameUtil.OFFSET * 4 + GameUtil.MAP_H * GameUtil.SQUARE_LENGTH;
 
+    Image offScreenImage = null;
+
     MapBottom mapBottom = new MapBottom();
     MapTop mapTop = new MapTop();
 
@@ -30,8 +32,12 @@ public class GameWin extends JFrame {
 
     @Override
     public void paint(Graphics g) {
-        mapBottom.paintSelf(g);
-        mapTop.paintSelf(g);
+        offScreenImage = this.createImage(width, height);
+        Graphics gImage = offScreenImage.getGraphics();
+        gImage.fillRect(0, 0, width, height);
+        mapBottom.paintSelf(gImage);
+        mapTop.paintSelf(gImage);
+        g.drawImage(offScreenImage, 0, 0, null);
     }
 
     public static void main(String[] args) {
