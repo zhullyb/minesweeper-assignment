@@ -18,10 +18,11 @@ public class GameUtil {
     static boolean RIGHT_CLICK = false;
 
     // 游戏状态
+    // -1 未开始
     // 0 游戏中
     // 1 胜利
     // 2 失败
-    static int state = 0;
+    static int state = -1;
 
     static long START_TIME;
     static int USED_TIME;

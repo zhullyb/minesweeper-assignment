@@ -120,6 +120,15 @@ public class MapBottom {
                 null);
 
         switch (GameUtil.state){
+            case -1:
+                GameUtil.USED_TIME = 0;
+                g.drawImage(GameUtil.face_unpressed,
+                        (int)(GameUtil.MAP_W * GameUtil.SQUARE_LENGTH/2.0),
+                        (int) ( GameUtil.OFFSET * 1.5 ) , //TODO: 我们还没有搞清楚这一个 y 坐标使用 1.5 的效果为什么不好
+                        GameUtil.OFFSET * 2,
+                        GameUtil.OFFSET * 2,
+                        null);
+                break;
             case 0:
                 GameUtil.USED_TIME = (int) (
                         System.currentTimeMillis() / 1000 - GameUtil.START_TIME < 1000 ?
@@ -127,7 +136,7 @@ public class MapBottom {
                                 999);
                 g.drawImage(GameUtil.face_unpressed,
                         (int)(GameUtil.MAP_W * GameUtil.SQUARE_LENGTH/2.0),
-                        (int) ( GameUtil.OFFSET * 1.5 ) , //TODO: 我们还没有搞清楚这一个 y 坐标使用 1.5 的效果为什么不好
+                        (int) ( GameUtil.OFFSET * 1.5 ) ,
                         GameUtil.OFFSET * 2,
                         GameUtil.OFFSET * 2,
                         null);
