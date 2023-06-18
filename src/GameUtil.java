@@ -47,6 +47,7 @@ public class GameUtil {
     static Image closed = Toolkit.getDefaultToolkit().getImage("resources/closed.png");
     static Image flag = Toolkit.getDefaultToolkit().getImage("resources/flag.png");
     static Image mine_wrong = Toolkit.getDefaultToolkit().getImage("resources/mine_wrong.png");
+    static Image mine_red = Toolkit.getDefaultToolkit().getImage("resources/mine_red.png");
 
     static Image face_unpressed = Toolkit.getDefaultToolkit().getImage("resources/face_unpressed.png");
     static Image face_lose = Toolkit.getDefaultToolkit().getImage("resources/face_lose.png");

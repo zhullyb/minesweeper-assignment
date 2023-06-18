@@ -52,6 +52,13 @@ public class MapBottom {
                             GameUtil.SQUARE_LENGTH,
                             GameUtil.SQUARE_LENGTH,
                             null);
+                } else if (GameUtil.DATA_BOTTOM[i][j] == -2) {
+                    g.drawImage(GameUtil.mine_red,
+                            GameUtil.OFFSET + (i - 1) * GameUtil.SQUARE_LENGTH,
+                            5 * GameUtil.OFFSET + (j - 1) * GameUtil.SQUARE_LENGTH,
+                            GameUtil.SQUARE_LENGTH,
+                            GameUtil.SQUARE_LENGTH,
+                            null);
                 }
             }
         }

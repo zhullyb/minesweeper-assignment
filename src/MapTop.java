@@ -62,6 +62,7 @@ public class MapTop {
                 if(GameUtil.DATA_BOTTOM[i][j] == -1 && GameUtil.DATA_TOP[i][j] == -1){
                     GameUtil.state = 2;
                     seeBoom();
+                    GameUtil.DATA_BOTTOM[(GameUtil.MOUSE_X - GameUtil.OFFSET) / GameUtil.SQUARE_LENGTH + 1][(GameUtil.MOUSE_Y - 5 * GameUtil.OFFSET) / GameUtil.SQUARE_LENGTH + 1] = -2;
                     return true;
                 }
             }
