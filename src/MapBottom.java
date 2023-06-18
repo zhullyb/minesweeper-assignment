@@ -59,13 +59,7 @@ public class MapBottom {
                             GameUtil.SQUARE_LENGTH,
                             GameUtil.SQUARE_LENGTH,
                             null);
-                }
-            }
-        }
-
-        for(int i = 1; i <= GameUtil.MAP_W; i++){
-            for(int j = 1; j <= GameUtil.MAP_H; j++){
-                if(GameUtil.DATA_BOTTOM[i][j] >= 0) {
+                } else if(GameUtil.DATA_BOTTOM[i][j] >= 0) {
                     g.drawImage(GameUtil.min_num[GameUtil.DATA_BOTTOM[i][j]],
                             GameUtil.OFFSET + (i - 1) * GameUtil.SQUARE_LENGTH,
                             5 * GameUtil.OFFSET + (j - 1) * GameUtil.SQUARE_LENGTH,

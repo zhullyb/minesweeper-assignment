@@ -175,36 +175,21 @@ public class MapTop {
                             GameUtil.SQUARE_LENGTH,
                             GameUtil.SQUARE_LENGTH,
                             null);
-                }
-            }
-        }
-        for(int i = 1; i <= GameUtil.MAP_W; i++){
-            for(int j = 1; j <= GameUtil.MAP_H; j++){
-                if(GameUtil.DATA_TOP[i][j] == 0) {
+                } else if(GameUtil.DATA_TOP[i][j] == 0) {
                     g.drawImage(GameUtil.closed,
                             GameUtil.OFFSET + (i - 1) * GameUtil.SQUARE_LENGTH,
                             5 * GameUtil.OFFSET + (j - 1) * GameUtil.SQUARE_LENGTH,
                             GameUtil.SQUARE_LENGTH,
                             GameUtil.SQUARE_LENGTH,
                             null);
-                }
-            }
-        }
-        for(int i = 1; i <= GameUtil.MAP_W; i++){
-            for(int j = 1; j <= GameUtil.MAP_H; j++){
-                if(GameUtil.DATA_TOP[i][j] == 1) {
+                } else if(GameUtil.DATA_TOP[i][j] == 1) {
                     g.drawImage(GameUtil.flag,
                             GameUtil.OFFSET + (i - 1) * GameUtil.SQUARE_LENGTH,
                             5 * GameUtil.OFFSET + (j - 1) * GameUtil.SQUARE_LENGTH,
                             GameUtil.SQUARE_LENGTH,
                             GameUtil.SQUARE_LENGTH,
                             null);
-                }
-            }
-        }
-        for(int i = 1; i <= GameUtil.MAP_W; i++){
-            for(int j = 1; j <= GameUtil.MAP_H; j++){
-                if(GameUtil.DATA_TOP[i][j] == 2) {
+                } else if(GameUtil.DATA_TOP[i][j] == 2) {
                     g.drawImage(GameUtil.mine_wrong,
                             GameUtil.OFFSET + (i - 1) * GameUtil.SQUARE_LENGTH,
                             5 * GameUtil.OFFSET + (j - 1) * GameUtil.SQUARE_LENGTH,
@@ -214,6 +199,7 @@ public class MapTop {
                 }
             }
         }
+
         if (GameUtil.pressing && GameUtil.MOUSE_X >= GameUtil.OFFSET && GameUtil.MOUSE_X <= GameUtil.OFFSET + GameUtil.MAP_W * GameUtil.SQUARE_LENGTH && GameUtil.MOUSE_Y >= 5 * GameUtil.OFFSET && GameUtil.MOUSE_Y <= 5 * GameUtil.OFFSET + GameUtil.MAP_H * GameUtil.SQUARE_LENGTH){
             g.drawImage(GameUtil.pressed,
                     GameUtil.OFFSET + (GameUtil.MOUSE_X - GameUtil.OFFSET) / GameUtil.SQUARE_LENGTH * GameUtil.SQUARE_LENGTH,
