@@ -17,6 +17,7 @@ public class GameUtil {
 
     // 底层元素
     // -1 代表雷
+    // -2 代表踩雷
     // 0 代表空
     // 1-8 代表周围雷的数量
     static int[][] DATA_BOTTOM = new int[MAP_W+2][MAP_H+2];

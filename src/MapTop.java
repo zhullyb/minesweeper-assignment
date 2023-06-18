@@ -29,6 +29,32 @@ public class MapTop {
                 GameUtil.RIGHT_CLICK = false;
             }
         }
+        boom();
+    }
+
+    boolean boom(){
+        for(int i = 1; i <= GameUtil.MAP_W; i++){
+            for(int j = 1; j <= GameUtil.MAP_H; j++){
+                if(GameUtil.DATA_BOTTOM[i][j] == -1 && GameUtil.DATA_TOP[i][j] == -1){
+                    seeBoom();
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    void seeBoom(){
+        for(int i = 1; i <= GameUtil.MAP_W; i++){
+            for(int j = 1; j <= GameUtil.MAP_H; j++){
+                if (GameUtil.DATA_BOTTOM[i][j] == -1 && GameUtil.DATA_TOP[i][j] != 1){
+                    GameUtil.DATA_TOP[i][j] = -1;
+                }
+                if (GameUtil.DATA_BOTTOM[i][j] != -1 && GameUtil.DATA_TOP[i][j] == 1){
+                    GameUtil.DATA_TOP[i][j] = 2;
+                }
+            }
+        }
     }
 
     void spaceOpen(int x, int y){
