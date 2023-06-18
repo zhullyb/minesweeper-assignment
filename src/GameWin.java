@@ -2,6 +2,8 @@ package src;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class GameWin extends JFrame {
 
@@ -19,6 +21,23 @@ public class GameWin extends JFrame {
         this.setTitle("扫雷");
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setVisible(true);
+        // 鼠标事件
+        this.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+                if(e.getButton() == 1){
+                    GameUtil.MOUSE_X = e.getX();
+                    GameUtil.MOUSE_Y = e.getY();
+                    GameUtil.LEFT_CLICK = true;
+                }
+                if(e.getButton() == 3){
+                    GameUtil.MOUSE_X = e.getX();
+                    GameUtil.MOUSE_Y = e.getY();
+                    GameUtil.RIGHT_CLICK = true;
+                }
+            }
+        });
 
         while(true){
             repaint();

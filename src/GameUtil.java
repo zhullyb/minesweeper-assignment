@@ -10,6 +10,11 @@ public class GameUtil {
     static int OFFSET = 45 * RATE;
     static int SQUARE_LENGTH = 50 * RATE;
 
+    static int MOUSE_X;
+    static int MOUSE_Y;
+    static boolean LEFT_CLICK = false;
+    static boolean RIGHT_CLICK = false;
+
     // 底层元素
     // -1 代表雷
     // 0 代表空
