@@ -53,6 +53,7 @@ public class GameWin extends JFrame {
     public void paint(Graphics g) {
         offScreenImage = this.createImage(width, height);
         Graphics gImage = offScreenImage.getGraphics();
+        gImage.setColor(new Color(0xC0C0C0));
         gImage.fillRect(0, 0, width, height);
         mapBottom.paintSelf(gImage);
         mapTop.paintSelf(gImage);
