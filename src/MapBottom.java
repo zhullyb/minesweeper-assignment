@@ -7,6 +7,8 @@ import java.awt.*;
 
 public class MapBottom {
 
+    MineBottom mineBottom = new MineBottom();
+
     // 绘制方法
     void paintSelf(Graphics g){
         g.setColor(Color.GRAY);
@@ -27,12 +29,14 @@ public class MapBottom {
 
         for(int i = 1; i <= GameUtil.MAP_W; i++){
             for(int j = 1; j <= GameUtil.MAP_H; j++){
-                g.drawImage(GameUtil.mine,
-                            GameUtil.OFFSET + (i-1) * GameUtil.SQUARE_LENGTH,
-                            3 * GameUtil.OFFSET + (j-1) * GameUtil.SQUARE_LENGTH,
+                if(GameUtil.DATA_BOTTOM[i][j] == -1) {
+                    g.drawImage(GameUtil.mine,
+                            GameUtil.OFFSET + (i - 1) * GameUtil.SQUARE_LENGTH,
+                            3 * GameUtil.OFFSET + (j - 1) * GameUtil.SQUARE_LENGTH,
                             GameUtil.SQUARE_LENGTH,
                             GameUtil.SQUARE_LENGTH,
                             null);
+                }
             }
         }
     }
