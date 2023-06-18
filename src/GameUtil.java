@@ -15,6 +15,12 @@ public class GameUtil {
     static boolean LEFT_CLICK = false;
     static boolean RIGHT_CLICK = false;
 
+    // 游戏状态
+    // 0 游戏中
+    // 1 胜利
+    // 2 失败
+    static int state = 0;
+
     // 底层元素
     // -1 代表雷
     // -2 代表踩雷
@@ -34,6 +40,10 @@ public class GameUtil {
     static Image closed = Toolkit.getDefaultToolkit().getImage("resources/closed.png");
     static Image flag = Toolkit.getDefaultToolkit().getImage("resources/flag.png");
     static Image mine_wrong = Toolkit.getDefaultToolkit().getImage("resources/mine_wrong.png");
+
+    static Image face_unpressed = Toolkit.getDefaultToolkit().getImage("resources/face_unpressed.png");
+    static Image face_lose = Toolkit.getDefaultToolkit().getImage("resources/face_lose.png");
+    static Image face_win = Toolkit.getDefaultToolkit().getImage("resources/face_win.png");
     static Image[] numbers = new Image[9];
     static {
         for(int i = 0; i < 9; i++){

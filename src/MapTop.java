@@ -37,6 +37,7 @@ public class MapTop {
         for(int i = 1; i <= GameUtil.MAP_W; i++){
             for(int j = 1; j <= GameUtil.MAP_H; j++){
                 if(GameUtil.DATA_BOTTOM[i][j] == -1 && GameUtil.DATA_TOP[i][j] == -1){
+                    GameUtil.state = 2;
                     seeBoom();
                     return true;
                 }
@@ -75,7 +76,7 @@ public class MapTop {
                     }
                 }
             }
-            System.out.println("You Win!");
+            GameUtil.state = 1;
             return true;
         }
         return false;
