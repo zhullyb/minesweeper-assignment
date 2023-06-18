@@ -16,6 +16,15 @@ public class GameWin extends JFrame {
         this.setTitle("扫雷");
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setVisible(true);
+
+        while(true){
+            repaint();
+            try {
+                Thread.sleep(40);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     @Override
