@@ -30,6 +30,7 @@ public class MapTop {
             }
         }
         boom();
+        victory();
     }
 
     boolean boom(){
@@ -57,6 +58,28 @@ public class MapTop {
         }
     }
 
+    boolean victory(){
+        int count = 0;
+        for(int i = 1; i <= GameUtil.MAP_W; i++){
+            for(int j = 1; j <= GameUtil.MAP_H; j++){
+                if(GameUtil.DATA_TOP[i][j] != -1){
+                    count++;
+                }
+            }
+        }
+        if(count == GameUtil.MINE_NUM){
+            for(int i=1; i <= GameUtil.MAP_W; i++){
+                for(int j=1; j <= GameUtil.MAP_H; j++){
+                    if(GameUtil.DATA_TOP[i][j] == 0){
+                        GameUtil.DATA_TOP[i][j] = 1;
+                    }
+                }
+            }
+            System.out.println("You Win!");
+            return true;
+        }
+        return false;
+    }
     void spaceOpen(int x, int y){
         if (GameUtil.DATA_BOTTOM[x][y] == 0){
             for(int i = x-1; i <= x+1; i++){
