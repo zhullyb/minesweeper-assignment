@@ -9,10 +9,21 @@ public class MapBottom {
 
     // 绘制方法
     void paintSelf(Graphics g){
-        for(int i = 0; i < 500; i+=50){
-            g.setColor(Color.GRAY);
-            g.drawLine(0, i, 500, i);
-            g.drawLine(i, 0, i, 500);
+        g.setColor(Color.GRAY);
+        // 绘制方格的竖线
+        for(int i = 0;i <= GameUtil.MAP_W;i++) {
+            g.drawLine(GameUtil.OFFSET + i * GameUtil.SQUARE_LENGTH,
+                    3 * GameUtil.OFFSET,
+                    GameUtil.OFFSET + i * GameUtil.SQUARE_LENGTH,
+                    3 * GameUtil.OFFSET + GameUtil.MAP_H * GameUtil.SQUARE_LENGTH);
         }
+        // 绘制方格的横线
+        for(int i = 0;i <= GameUtil.MAP_H;i++) {
+            g.drawLine(GameUtil.OFFSET,
+                    3 * GameUtil.OFFSET + i * GameUtil.SQUARE_LENGTH,
+                    GameUtil.OFFSET + GameUtil.MAP_W * GameUtil.SQUARE_LENGTH,
+                    3 * GameUtil.OFFSET + i * GameUtil.SQUARE_LENGTH);
+        }
+
     }
 }
