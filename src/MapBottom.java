@@ -94,8 +94,37 @@ public class MapBottom {
                 GameUtil.OFFSET * 2 - 8 * GameUtil.RATE,
                 null);
 
+        g.drawImage(GameUtil.nums_background,
+                GameUtil.OFFSET * 2 + GameUtil.MAP_W * GameUtil.SQUARE_LENGTH - (int) (1.0 * 173 / 108 * GameUtil.OFFSET * 2) - (int)( GameUtil.OFFSET * 1.5 ),
+                (int)( GameUtil.OFFSET * 1.5 ),
+                (int) (1.0 * 173 / 108 * GameUtil.OFFSET * 2),
+                GameUtil.OFFSET * 2,
+                null);
+        g.drawImage(GameUtil.numbers[GameUtil.USED_TIME / 100],
+                GameUtil.OFFSET * 2 + GameUtil.MAP_W * GameUtil.SQUARE_LENGTH - (int) (1.0 * 173 / 108 * GameUtil.OFFSET * 2) - (int)( GameUtil.OFFSET * 1.5 ) + 3 * GameUtil.RATE,
+                (int)( GameUtil.OFFSET * 1.5 ) + 4 * GameUtil.RATE,
+                (int) (1.0*52/99 * GameUtil.OFFSET * 2) - 4 * GameUtil.RATE,
+                GameUtil.OFFSET * 2 - 8 * GameUtil.RATE,
+                null);
+        g.drawImage(GameUtil.numbers[GameUtil.USED_TIME % 100 / 10],
+                GameUtil.OFFSET * 2 + GameUtil.MAP_W * GameUtil.SQUARE_LENGTH - (int) (1.0 * 173 / 108 * GameUtil.OFFSET * 2) - (int)( GameUtil.OFFSET * 1.5 ) + 2 * GameUtil.RATE + (int) (1.0*52/99 * GameUtil.OFFSET * 2),
+                (int)( GameUtil.OFFSET * 1.5 ) + 4 * GameUtil.RATE,
+                (int) (1.0*52/99 * GameUtil.OFFSET * 2) - 4 * GameUtil.RATE,
+                GameUtil.OFFSET * 2 - 8 * GameUtil.RATE,
+                null);
+        g.drawImage(GameUtil.numbers[GameUtil.USED_TIME % 10],
+                GameUtil.OFFSET * 2 + GameUtil.MAP_W * GameUtil.SQUARE_LENGTH - (int) (1.0 * 173 / 108 * GameUtil.OFFSET * 2) - (int)( GameUtil.OFFSET * 1.5 ) + 2 * GameUtil.RATE + (int) (1.0*52/99 * GameUtil.OFFSET * 4),
+                (int)( GameUtil.OFFSET * 1.5 ) + 4 * GameUtil.RATE,
+                (int) (1.0*52/99 * GameUtil.OFFSET * 2) - 4 * GameUtil.RATE,
+                GameUtil.OFFSET * 2 - 8 * GameUtil.RATE,
+                null);
+
         switch (GameUtil.state){
             case 0:
+                GameUtil.USED_TIME = (int) (
+                        System.currentTimeMillis() / 1000 - GameUtil.START_TIME < 1000 ?
+                                System.currentTimeMillis() / 1000 - GameUtil.START_TIME :
+                                999);
                 g.drawImage(GameUtil.face_unpressed,
                         (int)(GameUtil.MAP_W * GameUtil.SQUARE_LENGTH/2.0),
                         (int) ( GameUtil.OFFSET * 1.5 ) , //TODO: 我们还没有搞清楚这一个 y 坐标使用 1.5 的效果为什么不好

@@ -16,6 +16,7 @@ public class GameWin extends JFrame {
     MapTop mapTop = new MapTop();
 
     void launch() {
+        GameUtil.START_TIME = System.currentTimeMillis() / 1000;
         this.setSize(width, height);
         this.setLocationRelativeTo(null);
         this.setTitle("扫雷");
@@ -47,6 +48,7 @@ public class GameWin extends JFrame {
                                     e.getY() < (int) ( GameUtil.OFFSET * 1.5 ) + 2 * GameUtil.OFFSET){
                                 mapBottom.reGame();
                                 mapTop.reGame();
+                                GameUtil.START_TIME = System.currentTimeMillis() / 1000;
                                 GameUtil.FLAG_NUM = 0;
                                 GameUtil.state = 0;
                             }

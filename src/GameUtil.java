@@ -23,6 +23,9 @@ public class GameUtil {
     // 2 失败
     static int state = 0;
 
+    static long START_TIME;
+    static int USED_TIME;
+
     // 底层元素
     // -1 代表雷
     // -2 代表踩雷
