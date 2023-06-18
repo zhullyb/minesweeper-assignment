@@ -4,11 +4,11 @@ import java.awt.*;
 
 public class GameUtil {
     static int MINE_NUM = 10;
-    static int RATE = 1;
+    static int RATE = 2;
     static int MAP_W = 9;
     static int MAP_H = 9;
-    static int OFFSET = 45 * RATE;
-    static int SQUARE_LENGTH = 50 * RATE;
+    static int OFFSET = 20 * RATE;
+    static int SQUARE_LENGTH = 25 * RATE;
 
     static int MOUSE_X;
     static int MOUSE_Y;

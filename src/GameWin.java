@@ -8,7 +8,7 @@ import java.awt.event.MouseEvent;
 public class GameWin extends JFrame {
 
     int width = GameUtil.OFFSET * 2 + GameUtil.MAP_W * GameUtil.SQUARE_LENGTH;
-    int height = GameUtil.OFFSET * 4 + GameUtil.MAP_H * GameUtil.SQUARE_LENGTH;
+    int height = GameUtil.OFFSET * 6 + GameUtil.MAP_H * GameUtil.SQUARE_LENGTH;
 
     Image offScreenImage = null;
 
