@@ -26,7 +26,7 @@ public class GameWin extends JFrame {
             @Override
             public void mousePressed(MouseEvent e) {
                 super.mousePressed(e);
-                if (e.getButton() == 1) {
+                if (e.getButton() == 1 || e.getButton() == 3) {
                     GameUtil.MOUSE_X = e.getX();
                     GameUtil.MOUSE_Y = e.getY();
                     GameUtil.pressing = true;

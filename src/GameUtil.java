@@ -36,6 +36,7 @@ public class GameUtil {
     static int[][] DATA_BOTTOM = new int[MAP_W+2][MAP_H+2];
 
     // 顶部元素
+    // -2 按压中
     // -1 已翻开
     // 0 未翻开
     // 1 插旗
@@ -45,6 +46,7 @@ public class GameUtil {
     // 载入图片
     static Image mine = Toolkit.getDefaultToolkit().getImage("resources/mine.png");
     static Image closed = Toolkit.getDefaultToolkit().getImage("resources/closed.png");
+    static Image pressed = Toolkit.getDefaultToolkit().getImage("resources/pressed.png");
     static Image flag = Toolkit.getDefaultToolkit().getImage("resources/flag.png");
     static Image mine_wrong = Toolkit.getDefaultToolkit().getImage("resources/mine_wrong.png");
     static Image mine_red = Toolkit.getDefaultToolkit().getImage("resources/mine_red.png");
