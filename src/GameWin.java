@@ -26,15 +26,30 @@ public class GameWin extends JFrame {
             @Override
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
-                if(e.getButton() == 1){
-                    GameUtil.MOUSE_X = e.getX();
-                    GameUtil.MOUSE_Y = e.getY();
-                    GameUtil.LEFT_CLICK = true;
-                }
-                if(e.getButton() == 3){
-                    GameUtil.MOUSE_X = e.getX();
-                    GameUtil.MOUSE_Y = e.getY();
-                    GameUtil.RIGHT_CLICK = true;
+                switch (GameUtil.state) {
+                    case 0:
+                        if (e.getButton() == 1) {
+                            GameUtil.MOUSE_X = e.getX();
+                            GameUtil.MOUSE_Y = e.getY();
+                            GameUtil.LEFT_CLICK = true;
+                        }
+                        if (e.getButton() == 3) {
+                            GameUtil.MOUSE_X = e.getX();
+                            GameUtil.MOUSE_Y = e.getY();
+                            GameUtil.RIGHT_CLICK = true;
+                        }
+                    case 1:
+                    case 2:
+                        if(e.getButton() == 1){
+                            if (e.getX() > (int)(GameUtil.MAP_W * GameUtil.SQUARE_LENGTH/2.0) &&
+                                    e.getX() < (int)(GameUtil.MAP_W * GameUtil.SQUARE_LENGTH/2.0) + 2 * GameUtil.OFFSET &&
+                                    e.getY() > (int) ( GameUtil.OFFSET * 1.5 ) &&
+                                    e.getY() < (int) ( GameUtil.OFFSET * 1.5 ) + 2 * GameUtil.OFFSET){
+                                mapBottom.reGame();
+                                mapTop.reGame();
+                                GameUtil.state = 0;
+                            }
+                        }
                 }
             }
         });

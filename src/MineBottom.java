@@ -4,7 +4,8 @@ public class MineBottom {
     int[] mines = new int[GameUtil.MINE_NUM * 2];
     int x,y;
     boolean isPlace = true;
-    {
+
+    void newMine() {
         for(int i = 0; i < GameUtil.MINE_NUM; i++){
             x = (int) (Math.random() * GameUtil.MAP_W + 1);
             y = (int) (Math.random() * GameUtil.MAP_H + 1);

@@ -4,6 +4,14 @@ import java.awt.*;
 
 public class MapTop {
     int temp_x,temp_y;
+
+    void reGame(){
+        for(int i=1; i <= GameUtil.MAP_W; i++){
+            for(int j=1; j <= GameUtil.MAP_H; j++){
+                GameUtil.DATA_TOP[i][j] = 0;
+            }
+        }
+    }
     void logic(){
         temp_x = 0;
         temp_y = 0;

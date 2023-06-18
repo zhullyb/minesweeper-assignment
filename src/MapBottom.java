@@ -9,6 +9,21 @@ public class MapBottom {
 
     MineBottom mineBottom = new MineBottom();
     NumberBottom numberBottom = new NumberBottom();
+    {
+        mineBottom.newMine();
+        numberBottom.newNumber();
+    }
+
+    void reGame(){
+        for(int i=1; i <= GameUtil.MAP_W; i++){
+            for(int j=1; j <= GameUtil.MAP_H; j++){
+                GameUtil.DATA_BOTTOM[i][j] = 0;
+                GameUtil.DATA_TOP[i][j] = 0;
+            }
+        }
+        mineBottom.newMine();
+        numberBottom.newNumber();
+    }
 
     // 绘制方法
     void paintSelf(Graphics g){
