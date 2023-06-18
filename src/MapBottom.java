@@ -25,5 +25,15 @@ public class MapBottom {
                     3 * GameUtil.OFFSET + i * GameUtil.SQUARE_LENGTH);
         }
 
+        for(int i = 1; i <= GameUtil.MAP_W; i++){
+            for(int j = 1; j <= GameUtil.MAP_H; j++){
+                g.drawImage(GameUtil.mine,
+                            GameUtil.OFFSET + (i-1) * GameUtil.SQUARE_LENGTH,
+                            3 * GameUtil.OFFSET + (j-1) * GameUtil.SQUARE_LENGTH,
+                            GameUtil.SQUARE_LENGTH,
+                            GameUtil.SQUARE_LENGTH,
+                            null);
+            }
+        }
     }
 }
