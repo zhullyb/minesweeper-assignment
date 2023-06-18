@@ -9,6 +9,7 @@ public class GameWin extends JFrame {
     int height = GameUtil.OFFSET * 4 + GameUtil.MAP_H * GameUtil.SQUARE_LENGTH;
 
     MapBottom mapBottom = new MapBottom();
+    MapTop mapTop = new MapTop();
 
     void launch() {
         this.setSize(width, height);
@@ -30,6 +31,7 @@ public class GameWin extends JFrame {
     @Override
     public void paint(Graphics g) {
         mapBottom.paintSelf(g);
+        mapTop.paintSelf(g);
     }
 
     public static void main(String[] args) {

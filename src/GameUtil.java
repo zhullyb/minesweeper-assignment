@@ -16,8 +16,18 @@ public class GameUtil {
     // 1-8 代表周围雷的数量
     static int[][] DATA_BOTTOM = new int[MAP_W+2][MAP_H+2];
 
+    // 顶部元素
+    // -1 已翻开
+    // 0 未翻开
+    // 1 插旗
+    // 2 插错旗
+    static int[][] DATA_TOP = new int[MAP_W+2][MAP_H+2];
+
     // 载入图片
     static Image mine = Toolkit.getDefaultToolkit().getImage("resources/mine.png");
+    static Image closed = Toolkit.getDefaultToolkit().getImage("resources/closed.png");
+    static Image flag = Toolkit.getDefaultToolkit().getImage("resources/flag.png");
+    static Image mine_wrong = Toolkit.getDefaultToolkit().getImage("resources/mine_wrong.png");
     static Image[] numbers = new Image[9];
     static {
         for(int i = 0; i < 9; i++){
