@@ -24,8 +24,19 @@ public class GameWin extends JFrame {
         // 鼠标事件
         this.addMouseListener(new MouseAdapter() {
             @Override
-            public void mouseClicked(MouseEvent e) {
-                super.mouseClicked(e);
+            public void mousePressed(MouseEvent e) {
+                super.mousePressed(e);
+                if (e.getButton() == 1) {
+                    GameUtil.MOUSE_X = e.getX();
+                    GameUtil.MOUSE_Y = e.getY();
+                    GameUtil.pressing = true;
+                }
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                super.mouseReleased(e);
+                GameUtil.pressing = false;
                 switch (GameUtil.state) {
                     case -1:
                     case 0:

@@ -122,24 +122,66 @@ public class MapBottom {
         switch (GameUtil.state){
             case -1:
                 GameUtil.USED_TIME = 0;
-                g.drawImage(GameUtil.face_unpressed,
-                        (int)(GameUtil.MAP_W * GameUtil.SQUARE_LENGTH/2.0),
-                        (int) ( GameUtil.OFFSET * 1.5 ) , //TODO: 我们还没有搞清楚这一个 y 坐标使用 1.5 的效果为什么不好
-                        GameUtil.OFFSET * 2,
-                        GameUtil.OFFSET * 2,
-                        null);
+                if(GameUtil.pressing){
+                    if (GameUtil.MOUSE_X > (int)(GameUtil.MAP_W * GameUtil.SQUARE_LENGTH/2.0) &&
+                            GameUtil.MOUSE_X < (int)(GameUtil.MAP_W * GameUtil.SQUARE_LENGTH/2.0) + 2 * GameUtil.OFFSET &&
+                            GameUtil.MOUSE_Y > (int) ( GameUtil.OFFSET * 1.5 ) &&
+                            GameUtil.MOUSE_Y < (int) ( GameUtil.OFFSET * 1.5 ) + 2 * GameUtil.OFFSET) {
+                        g.drawImage(GameUtil.face_pressed,
+                                (int) (GameUtil.MAP_W * GameUtil.SQUARE_LENGTH / 2.0),
+                                (int) (GameUtil.OFFSET * 1.5),
+                                GameUtil.OFFSET * 2,
+                                GameUtil.OFFSET * 2,
+                                null);
+                    } else {
+                        g.drawImage(GameUtil.face_active,
+                                (int)(GameUtil.MAP_W * GameUtil.SQUARE_LENGTH/2.0),
+                                (int) ( GameUtil.OFFSET * 1.5 ),
+                                GameUtil.OFFSET * 2,
+                                GameUtil.OFFSET * 2,
+                                null);
+                    }
+                } else {
+                    g.drawImage(GameUtil.face_unpressed,
+                            (int) (GameUtil.MAP_W * GameUtil.SQUARE_LENGTH / 2.0),
+                            (int) (GameUtil.OFFSET * 1.5), //TODO: 我们还没有搞清楚这一个 y 坐标使用 1.5 的效果为什么不好
+                            GameUtil.OFFSET * 2,
+                            GameUtil.OFFSET * 2,
+                            null);
+                }
                 break;
             case 0:
                 GameUtil.USED_TIME = (int) (
                         System.currentTimeMillis() / 1000 - GameUtil.START_TIME < 1000 ?
                                 System.currentTimeMillis() / 1000 - GameUtil.START_TIME :
                                 999);
-                g.drawImage(GameUtil.face_unpressed,
-                        (int)(GameUtil.MAP_W * GameUtil.SQUARE_LENGTH/2.0),
-                        (int) ( GameUtil.OFFSET * 1.5 ) ,
-                        GameUtil.OFFSET * 2,
-                        GameUtil.OFFSET * 2,
-                        null);
+                if(GameUtil.pressing){
+                    if (GameUtil.MOUSE_X > (int)(GameUtil.MAP_W * GameUtil.SQUARE_LENGTH/2.0) &&
+                            GameUtil.MOUSE_X < (int)(GameUtil.MAP_W * GameUtil.SQUARE_LENGTH/2.0) + 2 * GameUtil.OFFSET &&
+                            GameUtil.MOUSE_Y > (int) ( GameUtil.OFFSET * 1.5 ) &&
+                            GameUtil.MOUSE_Y < (int) ( GameUtil.OFFSET * 1.5 ) + 2 * GameUtil.OFFSET) {
+                        g.drawImage(GameUtil.face_pressed,
+                                (int) (GameUtil.MAP_W * GameUtil.SQUARE_LENGTH / 2.0),
+                                (int) (GameUtil.OFFSET * 1.5),
+                                GameUtil.OFFSET * 2,
+                                GameUtil.OFFSET * 2,
+                                null);
+                    } else {
+                        g.drawImage(GameUtil.face_active,
+                                (int)(GameUtil.MAP_W * GameUtil.SQUARE_LENGTH/2.0),
+                                (int) ( GameUtil.OFFSET * 1.5 ),
+                                GameUtil.OFFSET * 2,
+                                GameUtil.OFFSET * 2,
+                                null);
+                    }
+                } else {
+                    g.drawImage(GameUtil.face_unpressed,
+                            (int) (GameUtil.MAP_W * GameUtil.SQUARE_LENGTH / 2.0),
+                            (int) (GameUtil.OFFSET * 1.5), //TODO: 我们还没有搞清楚这一个 y 坐标使用 1.5 的效果为什么不好
+                            GameUtil.OFFSET * 2,
+                            GameUtil.OFFSET * 2,
+                            null);
+                }
                 break;
             case 1:
                     g.drawImage(GameUtil.face_win,

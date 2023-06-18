@@ -21,7 +21,7 @@ public class MapTop {
         }
 
         if(temp_x >= 1 && temp_x <= GameUtil.MAP_W && temp_y >=1 && temp_y <= GameUtil.MAP_H){
-            if(GameUtil.LEFT_CLICK && GameUtil.DATA_TOP[temp_x][temp_y] == 0){
+            if( !GameUtil.pressing && GameUtil.LEFT_CLICK && GameUtil.DATA_TOP[temp_x][temp_y] == 0){
                 if (GameUtil.state == -1){
                     GameUtil.state = 0;
                     GameUtil.START_TIME = System.currentTimeMillis() / 1000;
@@ -30,7 +30,7 @@ public class MapTop {
                 spaceOpen(temp_x,temp_y);
                 GameUtil.LEFT_CLICK = false;
             }
-            if(GameUtil.RIGHT_CLICK){
+            if( !GameUtil.pressing && GameUtil.RIGHT_CLICK ){
                 if(GameUtil.DATA_TOP[temp_x][temp_y] == 0) {
                     GameUtil.DATA_TOP[temp_x][temp_y] = 1;
                     GameUtil.FLAG_NUM++;

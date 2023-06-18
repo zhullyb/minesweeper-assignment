@@ -16,6 +16,7 @@ public class GameUtil {
     static int MOUSE_Y;
     static boolean LEFT_CLICK = false;
     static boolean RIGHT_CLICK = false;
+    static boolean pressing = false;
 
     // 游戏状态
     // -1 未开始
@@ -50,6 +51,8 @@ public class GameUtil {
     static Image face_unpressed = Toolkit.getDefaultToolkit().getImage("resources/face_unpressed.png");
     static Image face_lose = Toolkit.getDefaultToolkit().getImage("resources/face_lose.png");
     static Image face_win = Toolkit.getDefaultToolkit().getImage("resources/face_win.png");
+    static Image face_active = Toolkit.getDefaultToolkit().getImage("resources/face_active.png");
+    static Image face_pressed = Toolkit.getDefaultToolkit().getImage("resources/face_pressed.png");
     static Image nums_background = Toolkit.getDefaultToolkit().getImage("resources/nums_background.png");
     static Image[] min_num = new Image[9];
     static {
