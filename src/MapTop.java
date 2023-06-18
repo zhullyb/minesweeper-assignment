@@ -19,7 +19,11 @@ public class MapTop {
                 GameUtil.LEFT_CLICK = false;
             }
             if(GameUtil.RIGHT_CLICK){
-                GameUtil.DATA_TOP[temp_x][temp_y] = 1;
+                if(GameUtil.DATA_TOP[temp_x][temp_y] == 0) {
+                    GameUtil.DATA_TOP[temp_x][temp_y] = 1;
+                } else if(GameUtil.DATA_TOP[temp_x][temp_y] == 1) {
+                    GameUtil.DATA_TOP[temp_x][temp_y] = 0;
+                }
                 GameUtil.RIGHT_CLICK = false;
             }
         }
