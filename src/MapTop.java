@@ -3,7 +3,7 @@ package src;
 import java.awt.*;
 
 public class MapTop {
-    int temp_x,temp_y;
+    static int temp_x,temp_y;
 
     void reGame(){
         for(int i=1; i <= GameUtil.MAP_W; i++){
@@ -79,7 +79,7 @@ public class MapTop {
                 if(GameUtil.DATA_BOTTOM[i][j] == -1 && GameUtil.DATA_TOP[i][j] == -1){
                     GameUtil.state = 2;
                     seeBoom();
-                    GameUtil.DATA_BOTTOM[(GameUtil.MOUSE_X - GameUtil.OFFSET) / GameUtil.SQUARE_LENGTH + 1][(GameUtil.MOUSE_Y - 5 * GameUtil.OFFSET) / GameUtil.SQUARE_LENGTH + 1] = -2;
+                    GameUtil.DATA_BOTTOM[temp_x][temp_y] = -2;
                     return true;
                 }
             }
