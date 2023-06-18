@@ -23,6 +23,8 @@ public class MapTop {
                     GameUtil.DATA_TOP[temp_x][temp_y] = 1;
                 } else if(GameUtil.DATA_TOP[temp_x][temp_y] == 1) {
                     GameUtil.DATA_TOP[temp_x][temp_y] = 0;
+                } else if(GameUtil.DATA_TOP[temp_x][temp_y] == -1) {
+                    numOpen(temp_x,temp_y);
                 }
                 GameUtil.RIGHT_CLICK = false;
             }
@@ -44,6 +46,30 @@ public class MapTop {
         }
     }
 
+    void numOpen(int x, int y){
+        int count = 0;
+        if(GameUtil.DATA_BOTTOM[x][y] > 0){
+            for(int i = x-1; i <= x+1; i++){
+                for(int j = y-1; j <= y+1; j++){
+                    if(GameUtil.DATA_TOP[i][j] == 1){
+                        count++;
+                    }
+                }
+            }
+            if (count == GameUtil.DATA_BOTTOM[x][y]){
+                for(int i = x-1; i <= x+1; i++){
+                    for(int j = y-1; j <= y+1; j++){
+                        if(GameUtil.DATA_TOP[i][j] != 1){
+                            GameUtil.DATA_TOP[i][j] = -1;
+                            if(i >= 1 && j >=1 && i <= GameUtil.MAP_W && j <= GameUtil.MAP_H) {
+                                spaceOpen(i, j);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
     void paintSelf(Graphics g){
         logic();
         for(int i = 1; i <= GameUtil.MAP_W; i++){
