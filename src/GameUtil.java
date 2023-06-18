@@ -18,5 +18,11 @@ public class GameUtil {
 
     // 载入图片
     static Image mine = Toolkit.getDefaultToolkit().getImage("resources/mine.png");
+    static Image[] numbers = new Image[9];
+    static {
+        for(int i = 0; i < 9; i++){
+            numbers[i] = Toolkit.getDefaultToolkit().getImage("resources/type" + i + ".png");
+        }
+    }
 
 }
