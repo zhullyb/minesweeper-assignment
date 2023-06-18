@@ -3,14 +3,24 @@ package src;
 import java.awt.*;
 
 public class MapTop {
+    int temp_x,temp_y;
     void logic(){
-        if(GameUtil.LEFT_CLICK){
-            System.out.println(GameUtil.MOUSE_X + " " + GameUtil.MOUSE_Y);
-            GameUtil.LEFT_CLICK = false;
+        temp_x = 0;
+        temp_y = 0;
+        if(GameUtil.MOUSE_X > GameUtil.OFFSET && GameUtil.MOUSE_Y > GameUtil.OFFSET * 3) {
+            temp_x = (GameUtil.MOUSE_X - GameUtil.OFFSET) / GameUtil.SQUARE_LENGTH + 1;
+            temp_y = (GameUtil.MOUSE_Y - 3 * GameUtil.OFFSET) / GameUtil.SQUARE_LENGTH + 1;
         }
-        if(GameUtil.RIGHT_CLICK){
-            System.out.println(GameUtil.MOUSE_X + " " + GameUtil.MOUSE_Y);
-            GameUtil.RIGHT_CLICK = false;
+
+        if(temp_x >= 1 && temp_x <= GameUtil.MAP_W && temp_y >=1 && temp_y <= GameUtil.MAP_H){
+            if(GameUtil.LEFT_CLICK && GameUtil.DATA_TOP[temp_x][temp_y] == 0){
+                GameUtil.DATA_TOP[temp_x][temp_y] = -1;
+                GameUtil.LEFT_CLICK = false;
+            }
+            if(GameUtil.RIGHT_CLICK){
+                GameUtil.DATA_TOP[temp_x][temp_y] = 1;
+                GameUtil.RIGHT_CLICK = false;
+            }
         }
     }
     void paintSelf(Graphics g){
