@@ -28,7 +28,6 @@ public class MapTop {
                 }
                 GameUtil.DATA_TOP[temp_x][temp_y] = -1;
                 spaceOpen(temp_x,temp_y);
-                GameUtil.LEFT_CLICK = false;
             }
             if( !GameUtil.pressing && GameUtil.RIGHT_CLICK ){
                 if(GameUtil.DATA_TOP[temp_x][temp_y] == 0) {
@@ -40,7 +39,6 @@ public class MapTop {
                 } else if(GameUtil.DATA_TOP[temp_x][temp_y] == -1) {
                     numOpen(temp_x,temp_y);
                 }
-                GameUtil.RIGHT_CLICK = false;
             }
             if( GameUtil.pressing && GameUtil.DATA_TOP[temp_x][temp_y] == -1) {
                 for (int i = temp_x - 1; i <= temp_x + 1; i++) {
@@ -60,6 +58,8 @@ public class MapTop {
                 }
             }
         }
+        GameUtil.LEFT_CLICK = false;
+        GameUtil.RIGHT_CLICK = false;
         boom();
         victory();
     }
