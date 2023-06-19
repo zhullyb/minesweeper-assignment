@@ -27,21 +27,21 @@ public class MapBottom {
 
     // 绘制方法
     void paintSelf(Graphics g){
-        g.setColor(Color.GRAY);
-        // 绘制方格的竖线
-        for(int i = 0;i <= GameUtil.MAP_W;i++) {
-            g.drawLine(GameUtil.OFFSET + i * GameUtil.SQUARE_LENGTH,
+        Graphics2D g2d = (Graphics2D) g;
+        Stroke stroke = new BasicStroke(5);
+        g2d.setStroke(stroke);
+        g2d.setColor(Color.GRAY);
+        // 绘制最后一条竖线
+            g2d.drawLine(GameUtil.OFFSET + GameUtil.MAP_W * GameUtil.SQUARE_LENGTH,
                     5 * GameUtil.OFFSET,
-                    GameUtil.OFFSET + i * GameUtil.SQUARE_LENGTH,
-                    5 * GameUtil.OFFSET + GameUtil.MAP_H * GameUtil.SQUARE_LENGTH);
-        }
-        // 绘制方格的横线
-        for(int i = 0;i <= GameUtil.MAP_H;i++) {
-            g.drawLine(GameUtil.OFFSET,
-                    5 * GameUtil.OFFSET + i * GameUtil.SQUARE_LENGTH,
                     GameUtil.OFFSET + GameUtil.MAP_W * GameUtil.SQUARE_LENGTH,
-                    5 * GameUtil.OFFSET + i * GameUtil.SQUARE_LENGTH);
-        }
+                    5 * GameUtil.OFFSET + GameUtil.MAP_H * GameUtil.SQUARE_LENGTH);
+
+        // 绘制最后一条横线
+            g2d.drawLine(GameUtil.OFFSET,
+                    5 * GameUtil.OFFSET + GameUtil.MAP_H * GameUtil.SQUARE_LENGTH,
+                    GameUtil.OFFSET + GameUtil.MAP_W * GameUtil.SQUARE_LENGTH,
+                    5 * GameUtil.OFFSET + GameUtil.MAP_H * GameUtil.SQUARE_LENGTH);
 
         for(int i = 1; i <= GameUtil.MAP_W; i++){
             for(int j = 1; j <= GameUtil.MAP_H; j++){
