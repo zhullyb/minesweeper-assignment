@@ -114,6 +114,7 @@ public class MapTop {
                 for(int j=1; j <= GameUtil.MAP_H; j++){
                     if(GameUtil.DATA_TOP[i][j] == 0){
                         GameUtil.DATA_TOP[i][j] = 1;
+                        GameUtil.FLAG_NUM++;
                     }
                 }
             }
