@@ -185,20 +185,47 @@ public class MapBottom {
                 }
                 break;
             case 1:
+                if(GameUtil.pressing &&
+                        GameUtil.MOUSE_X > (int)(GameUtil.MAP_W * GameUtil.SQUARE_LENGTH/2.0) &&
+                        GameUtil.MOUSE_X < (int)(GameUtil.MAP_W * GameUtil.SQUARE_LENGTH/2.0) + 2 * GameUtil.OFFSET &&
+                        GameUtil.MOUSE_Y > (int) ( GameUtil.OFFSET * 1.5 ) &&
+                        GameUtil.MOUSE_Y < (int) ( GameUtil.OFFSET * 1.5 ) + 2 * GameUtil.OFFSET) {
+                    g.drawImage(GameUtil.face_pressed,
+                                (int) (GameUtil.MAP_W * GameUtil.SQUARE_LENGTH / 2.0),
+                                (int) (GameUtil.OFFSET * 1.5),
+                                GameUtil.OFFSET * 2,
+                                GameUtil.OFFSET * 2,
+                                null);
+                } else {
                     g.drawImage(GameUtil.face_win,
-                            (int)(GameUtil.MAP_W * GameUtil.SQUARE_LENGTH/2.0),
-                            (int) ( GameUtil.OFFSET * 1.5 ) ,
+                            (int) (GameUtil.MAP_W * GameUtil.SQUARE_LENGTH / 2.0),
+                            (int) (GameUtil.OFFSET * 1.5),
                             GameUtil.OFFSET * 2,
                             GameUtil.OFFSET * 2,
                             null);
+                }
                 break;
             case 2:
-                    g.drawImage(GameUtil.face_lose,
-                            (int)(GameUtil.MAP_W * GameUtil.SQUARE_LENGTH/2.0),
-                            (int) ( GameUtil.OFFSET * 1.5 ) ,
+                if(GameUtil.pressing &&
+                        GameUtil.MOUSE_X > (int)(GameUtil.MAP_W * GameUtil.SQUARE_LENGTH/2.0) &&
+                        GameUtil.MOUSE_X < (int)(GameUtil.MAP_W * GameUtil.SQUARE_LENGTH/2.0) + 2 * GameUtil.OFFSET &&
+                        GameUtil.MOUSE_Y > (int) ( GameUtil.OFFSET * 1.5 ) &&
+                        GameUtil.MOUSE_Y < (int) ( GameUtil.OFFSET * 1.5 ) + 2 * GameUtil.OFFSET) {
+                    g.drawImage(GameUtil.face_pressed,
+                            (int) (GameUtil.MAP_W * GameUtil.SQUARE_LENGTH / 2.0),
+                            (int) (GameUtil.OFFSET * 1.5),
                             GameUtil.OFFSET * 2,
                             GameUtil.OFFSET * 2,
                             null);
+                } else {
+                    g.drawImage(GameUtil.face_lose,
+                            (int) (GameUtil.MAP_W * GameUtil.SQUARE_LENGTH / 2.0),
+                            (int) (GameUtil.OFFSET * 1.5),
+                            GameUtil.OFFSET * 2,
+                            GameUtil.OFFSET * 2,
+                            null);
+                }
+                break;
         }
     }
 }
