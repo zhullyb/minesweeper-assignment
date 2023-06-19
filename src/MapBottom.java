@@ -120,6 +120,87 @@ public class MapBottom {
                 GameUtil.OFFSET * 2 - 8 * GameUtil.RATE,
                 null);
 
+        // 边框绘制
+        g.drawImage(GameUtil.corner_up_left_2x,
+                0,
+                GameUtil.titleBarHeight,
+                GameUtil.OFFSET,
+                GameUtil.OFFSET,
+                null);
+        g.drawImage(GameUtil.corner_up_right_2x,
+                GameUtil.OFFSET + GameUtil.MAP_W * GameUtil.SQUARE_LENGTH,
+                GameUtil.titleBarHeight,
+                GameUtil.OFFSET,
+                GameUtil.OFFSET,
+                null);
+        g.drawImage(GameUtil.corner_bottom_left_2x,
+                0,
+                GameUtil.titleBarHeight + GameUtil.OFFSET * 5 + GameUtil.MAP_H * GameUtil.SQUARE_LENGTH,
+                GameUtil.OFFSET,
+                GameUtil.OFFSET,
+                null);
+        g.drawImage(GameUtil.corner_bottom_right_2x,
+                GameUtil.OFFSET + GameUtil.MAP_W * GameUtil.SQUARE_LENGTH,
+                GameUtil.titleBarHeight + GameUtil.OFFSET * 5 + GameUtil.MAP_H * GameUtil.SQUARE_LENGTH,
+                GameUtil.OFFSET,
+                GameUtil.OFFSET,
+                null);
+        g.drawImage(GameUtil.t_left_2x,
+                0,
+                GameUtil.titleBarHeight + GameUtil.OFFSET * 4,
+                GameUtil.OFFSET,
+                GameUtil.OFFSET,
+                null);
+        g.drawImage(GameUtil.t_right_2x,
+                GameUtil.OFFSET + GameUtil.MAP_W * GameUtil.SQUARE_LENGTH,
+                GameUtil.titleBarHeight + GameUtil.OFFSET * 4,
+                GameUtil.OFFSET,
+                GameUtil.OFFSET,
+                null);
+
+        g.drawImage(GameUtil.border_hor_2x,
+                GameUtil.OFFSET,
+                GameUtil.titleBarHeight,
+                GameUtil.MAP_W * GameUtil.SQUARE_LENGTH,
+                GameUtil.OFFSET,
+                null);
+        g.drawImage(GameUtil.border_hor_2x,
+                GameUtil.OFFSET,
+                GameUtil.titleBarHeight + GameUtil.OFFSET * 4,
+                GameUtil.MAP_W * GameUtil.SQUARE_LENGTH,
+                GameUtil.OFFSET,
+                null);
+        g.drawImage(GameUtil.border_hor_2x,
+                GameUtil.OFFSET,
+                GameUtil.titleBarHeight + GameUtil.OFFSET * 5 + GameUtil.MAP_H * GameUtil.SQUARE_LENGTH,
+                GameUtil.MAP_W * GameUtil.SQUARE_LENGTH,
+                GameUtil.OFFSET,
+                null);
+        g.drawImage(GameUtil.border_vert_2x,
+                0,
+                GameUtil.titleBarHeight + GameUtil.OFFSET,
+                GameUtil.OFFSET,
+                GameUtil.OFFSET * 3,
+                null);
+        g.drawImage(GameUtil.border_vert_2x,
+                GameUtil.OFFSET + GameUtil.MAP_W * GameUtil.SQUARE_LENGTH,
+                GameUtil.titleBarHeight + GameUtil.OFFSET,
+                GameUtil.OFFSET,
+                GameUtil.OFFSET * 3,
+                null);
+        g.drawImage(GameUtil.border_vert_2x,
+                0,
+                GameUtil.titleBarHeight + GameUtil.OFFSET * 5,
+                GameUtil.OFFSET,
+                GameUtil.MAP_H * GameUtil.SQUARE_LENGTH,
+                null);
+        g.drawImage(GameUtil.border_vert_2x,
+                GameUtil.OFFSET + GameUtil.MAP_W * GameUtil.SQUARE_LENGTH,
+                GameUtil.titleBarHeight + GameUtil.OFFSET * 5,
+                GameUtil.OFFSET,
+                GameUtil.MAP_H * GameUtil.SQUARE_LENGTH,
+                null);
+
         switch (GameUtil.state){
             case -1:
                 GameUtil.USED_TIME = 0;

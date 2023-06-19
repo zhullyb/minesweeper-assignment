@@ -57,6 +57,14 @@ public class GameUtil {
     static Image face_active = Toolkit.getDefaultToolkit().getImage("resources/face_active.png");
     static Image face_pressed = Toolkit.getDefaultToolkit().getImage("resources/face_pressed.png");
     static Image nums_background = Toolkit.getDefaultToolkit().getImage("resources/nums_background.png");
+    static Image border_hor_2x = Toolkit.getDefaultToolkit().getImage("resources/border_hor_2x.png");
+    static Image border_vert_2x = Toolkit.getDefaultToolkit().getImage("resources/border_vert_2x.png");
+    static Image corner_bottom_left_2x = Toolkit.getDefaultToolkit().getImage("resources/corner_bottom_left_2x.png");
+    static Image corner_bottom_right_2x = Toolkit.getDefaultToolkit().getImage("resources/corner_bottom_right_2x.png");
+    static Image corner_up_left_2x = Toolkit.getDefaultToolkit().getImage("resources/corner_up_left_2x.png");
+    static Image corner_up_right_2x = Toolkit.getDefaultToolkit().getImage("resources/corner_up_right_2x.png");
+    static Image t_left_2x = Toolkit.getDefaultToolkit().getImage("resources/t_left_2x.png");
+    static Image t_right_2x = Toolkit.getDefaultToolkit().getImage("resources/t_right_2x.png");
     static Image[] min_num = new Image[9];
     static {
         for(int i = 0; i < 9; i++){
