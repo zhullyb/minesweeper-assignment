@@ -200,7 +200,7 @@ public class MapTop {
             }
         }
 
-        if (GameUtil.pressing && GameUtil.MOUSE_X >= GameUtil.OFFSET && GameUtil.MOUSE_X <= GameUtil.OFFSET + GameUtil.MAP_W * GameUtil.SQUARE_LENGTH && GameUtil.MOUSE_Y >= 5 * GameUtil.OFFSET && GameUtil.MOUSE_Y <= 5 * GameUtil.OFFSET + GameUtil.MAP_H * GameUtil.SQUARE_LENGTH){
+        if (GameUtil.pressing && temp_x >= 1 && temp_y >= 1 && temp_x <= GameUtil.MAP_W && temp_y <= GameUtil.MAP_H){
             g.drawImage(GameUtil.pressed,
                     GameUtil.OFFSET + (GameUtil.MOUSE_X - GameUtil.OFFSET) / GameUtil.SQUARE_LENGTH * GameUtil.SQUARE_LENGTH,
                     5 * GameUtil.OFFSET + (GameUtil.MOUSE_Y - 5 * GameUtil.OFFSET) / GameUtil.SQUARE_LENGTH * GameUtil.SQUARE_LENGTH,
