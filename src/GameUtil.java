@@ -9,6 +9,7 @@ public class GameUtil {
     static int MAP_H = 9;
     static int OFFSET = 20 * RATE;
     static int SQUARE_LENGTH = 25 * RATE;
+    static int titleBarHeight = 0;
 
     static int FLAG_NUM = 0;
 

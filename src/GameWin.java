@@ -20,6 +20,11 @@ public class GameWin extends JFrame {
         this.setLocationRelativeTo(null);
         this.setTitle("扫雷");
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        this.setResizable(false);
+        this.setVisible(true);
+        GameUtil.titleBarHeight = this.getInsets().top;
+        this.setVisible(false);
+        this.setSize(width, height + GameUtil.titleBarHeight);
         this.setVisible(true);
         // 鼠标事件
         this.addMouseListener(new MouseAdapter() {
@@ -55,8 +60,8 @@ public class GameWin extends JFrame {
                         if(e.getButton() == 1){
                             if (e.getX() > (int)(GameUtil.MAP_W * GameUtil.SQUARE_LENGTH/2.0) &&
                                     e.getX() < (int)(GameUtil.MAP_W * GameUtil.SQUARE_LENGTH/2.0) + 2 * GameUtil.OFFSET &&
-                                    e.getY() > (int) ( GameUtil.OFFSET * 1.5 ) &&
-                                    e.getY() < (int) ( GameUtil.OFFSET * 1.5 ) + 2 * GameUtil.OFFSET){
+                                    e.getY() > (int) ( GameUtil.OFFSET * 1.5 ) + GameUtil.titleBarHeight &&
+                                    e.getY() < (int) ( GameUtil.OFFSET * 1.5 ) + 2 * GameUtil.OFFSET + GameUtil.titleBarHeight) {
                                 mapBottom.reGame();
                                 mapTop.reGame();
                                 GameUtil.FLAG_NUM = 0;
@@ -85,7 +90,7 @@ public class GameWin extends JFrame {
         gImage.fillRect(0, 0, width, height);
         mapBottom.paintSelf(gImage);
         mapTop.paintSelf(gImage);
-        g.drawImage(offScreenImage, 0, 0, null);
+        g.drawImage(offScreenImage, 0, GameUtil.titleBarHeight, null);
     }
 
     public static void main(String[] args) {

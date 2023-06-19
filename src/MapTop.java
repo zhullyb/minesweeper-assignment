@@ -17,7 +17,7 @@ public class MapTop {
         temp_y = 0;
         if( GameUtil.state <= 0 && GameUtil.MOUSE_X > GameUtil.OFFSET && GameUtil.MOUSE_Y > GameUtil.OFFSET * 5) {
             temp_x = (GameUtil.MOUSE_X - GameUtil.OFFSET) / GameUtil.SQUARE_LENGTH + 1;
-            temp_y = (GameUtil.MOUSE_Y - 5 * GameUtil.OFFSET) / GameUtil.SQUARE_LENGTH + 1;
+            temp_y = (GameUtil.MOUSE_Y - 5 * GameUtil.OFFSET - GameUtil.titleBarHeight ) / GameUtil.SQUARE_LENGTH + 1;
         }
 
         if(temp_x >= 1 && temp_x <= GameUtil.MAP_W && temp_y >=1 && temp_y <= GameUtil.MAP_H){
@@ -203,8 +203,8 @@ public class MapTop {
 
         if (GameUtil.pressing && temp_x >= 1 && temp_y >= 1 && temp_x <= GameUtil.MAP_W && temp_y <= GameUtil.MAP_H){
             g.drawImage(GameUtil.pressed,
-                    GameUtil.OFFSET + (GameUtil.MOUSE_X - GameUtil.OFFSET) / GameUtil.SQUARE_LENGTH * GameUtil.SQUARE_LENGTH,
-                    5 * GameUtil.OFFSET + (GameUtil.MOUSE_Y - 5 * GameUtil.OFFSET) / GameUtil.SQUARE_LENGTH * GameUtil.SQUARE_LENGTH,
+                    GameUtil.OFFSET + (temp_x - 1) * GameUtil.SQUARE_LENGTH,
+                    5 * GameUtil.OFFSET + (temp_y - 1) * GameUtil.SQUARE_LENGTH,
                     GameUtil.SQUARE_LENGTH,
                     GameUtil.SQUARE_LENGTH,
                     null);
