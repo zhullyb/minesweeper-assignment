@@ -27,22 +27,6 @@ public class MapBottom {
 
     // 绘制方法
     void paintSelf(Graphics g){
-        Graphics2D g2d = (Graphics2D) g;
-        Stroke stroke = new BasicStroke(5);
-        g2d.setStroke(stroke);
-        g2d.setColor(Color.GRAY);
-        // 绘制最后一条竖线
-            g2d.drawLine(GameUtil.OFFSET + GameUtil.MAP_W * GameUtil.SQUARE_LENGTH,
-                    5 * GameUtil.OFFSET,
-                    GameUtil.OFFSET + GameUtil.MAP_W * GameUtil.SQUARE_LENGTH,
-                    5 * GameUtil.OFFSET + GameUtil.MAP_H * GameUtil.SQUARE_LENGTH);
-
-        // 绘制最后一条横线
-            g2d.drawLine(GameUtil.OFFSET,
-                    5 * GameUtil.OFFSET + GameUtil.MAP_H * GameUtil.SQUARE_LENGTH,
-                    GameUtil.OFFSET + GameUtil.MAP_W * GameUtil.SQUARE_LENGTH,
-                    5 * GameUtil.OFFSET + GameUtil.MAP_H * GameUtil.SQUARE_LENGTH);
-
         for(int i = 1; i <= GameUtil.MAP_W; i++){
             for(int j = 1; j <= GameUtil.MAP_H; j++){
                 if(GameUtil.DATA_BOTTOM[i][j] == -1) {
@@ -123,80 +107,80 @@ public class MapBottom {
         // 边框绘制
         g.drawImage(GameUtil.corner_up_left_2x,
                 0,
-                GameUtil.titleBarHeight,
+                0,
                 GameUtil.OFFSET,
                 GameUtil.OFFSET,
                 null);
         g.drawImage(GameUtil.corner_up_right_2x,
                 GameUtil.OFFSET + GameUtil.MAP_W * GameUtil.SQUARE_LENGTH,
-                GameUtil.titleBarHeight,
+                0,
                 GameUtil.OFFSET,
                 GameUtil.OFFSET,
                 null);
         g.drawImage(GameUtil.corner_bottom_left_2x,
                 0,
-                GameUtil.titleBarHeight + GameUtil.OFFSET * 5 + GameUtil.MAP_H * GameUtil.SQUARE_LENGTH,
+                GameUtil.OFFSET * 5 + GameUtil.MAP_H * GameUtil.SQUARE_LENGTH,
                 GameUtil.OFFSET,
                 GameUtil.OFFSET,
                 null);
         g.drawImage(GameUtil.corner_bottom_right_2x,
                 GameUtil.OFFSET + GameUtil.MAP_W * GameUtil.SQUARE_LENGTH,
-                GameUtil.titleBarHeight + GameUtil.OFFSET * 5 + GameUtil.MAP_H * GameUtil.SQUARE_LENGTH,
+                GameUtil.OFFSET * 5 + GameUtil.MAP_H * GameUtil.SQUARE_LENGTH,
                 GameUtil.OFFSET,
                 GameUtil.OFFSET,
                 null);
         g.drawImage(GameUtil.t_left_2x,
                 0,
-                GameUtil.titleBarHeight + GameUtil.OFFSET * 4,
+                GameUtil.OFFSET * 4,
                 GameUtil.OFFSET,
                 GameUtil.OFFSET,
                 null);
         g.drawImage(GameUtil.t_right_2x,
                 GameUtil.OFFSET + GameUtil.MAP_W * GameUtil.SQUARE_LENGTH,
-                GameUtil.titleBarHeight + GameUtil.OFFSET * 4,
+                GameUtil.OFFSET * 4,
                 GameUtil.OFFSET,
                 GameUtil.OFFSET,
                 null);
 
         g.drawImage(GameUtil.border_hor_2x,
                 GameUtil.OFFSET,
-                GameUtil.titleBarHeight,
+                0,
                 GameUtil.MAP_W * GameUtil.SQUARE_LENGTH,
                 GameUtil.OFFSET,
                 null);
         g.drawImage(GameUtil.border_hor_2x,
                 GameUtil.OFFSET,
-                GameUtil.titleBarHeight + GameUtil.OFFSET * 4,
+                GameUtil.OFFSET * 4,
                 GameUtil.MAP_W * GameUtil.SQUARE_LENGTH,
                 GameUtil.OFFSET,
                 null);
         g.drawImage(GameUtil.border_hor_2x,
                 GameUtil.OFFSET,
-                GameUtil.titleBarHeight + GameUtil.OFFSET * 5 + GameUtil.MAP_H * GameUtil.SQUARE_LENGTH,
+                GameUtil.OFFSET * 5 + GameUtil.MAP_H * GameUtil.SQUARE_LENGTH,
                 GameUtil.MAP_W * GameUtil.SQUARE_LENGTH,
                 GameUtil.OFFSET,
                 null);
         g.drawImage(GameUtil.border_vert_2x,
                 0,
-                GameUtil.titleBarHeight + GameUtil.OFFSET,
+                GameUtil.OFFSET,
                 GameUtil.OFFSET,
                 GameUtil.OFFSET * 3,
                 null);
         g.drawImage(GameUtil.border_vert_2x,
                 GameUtil.OFFSET + GameUtil.MAP_W * GameUtil.SQUARE_LENGTH,
-                GameUtil.titleBarHeight + GameUtil.OFFSET,
+                GameUtil.OFFSET,
                 GameUtil.OFFSET,
                 GameUtil.OFFSET * 3,
                 null);
         g.drawImage(GameUtil.border_vert_2x,
                 0,
-                GameUtil.titleBarHeight + GameUtil.OFFSET * 5,
+                GameUtil.OFFSET * 5,
                 GameUtil.OFFSET,
                 GameUtil.MAP_H * GameUtil.SQUARE_LENGTH,
                 null);
         g.drawImage(GameUtil.border_vert_2x,
                 GameUtil.OFFSET + GameUtil.MAP_W * GameUtil.SQUARE_LENGTH,
-                GameUtil.titleBarHeight + GameUtil.OFFSET * 5,
+                GameUtil.OFFSET * 5,
                 GameUtil.OFFSET,
                 GameUtil.MAP_H * GameUtil.SQUARE_LENGTH,
                 null);
