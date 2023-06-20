@@ -1,22 +1,32 @@
 package src;
 
+/**
+ * 工具类，储存游戏中的常量，并读入游戏素材
+ */
+
 import java.awt.*;
 
 public class GameUtil {
     static int MINE_NUM = 10;
+    // 缩放比例，需要使用整数
     static int RATE = 2;
     static int MAP_W = 9;
     static int MAP_H = 9;
+    // 边框宽度(偏移量)
     static int OFFSET = 20 * RATE;
     static int SQUARE_LENGTH = 25 * RATE;
+    // 标题栏高度，需要在程序图像第一次绘制后获取
     static int titleBarHeight = 0;
 
     static int FLAG_NUM = 0;
 
+    // 鼠标的绝对位置
     static int MOUSE_X;
     static int MOUSE_Y;
+    // 鼠标的左右键状态
     static boolean LEFT_CLICK = false;
     static boolean RIGHT_CLICK = false;
+    // 鼠标是否按压，用于制作长按效果
     static boolean pressing = false;
 
     // 游戏状态
@@ -26,7 +36,9 @@ public class GameUtil {
     // 2 失败
     static int state = -1;
 
+    // 游戏开始时间（unix时间戳，秒）
     static long START_TIME;
+    // 游戏开始后所用的时间（秒）
     static int USED_TIME;
 
     // 底层元素

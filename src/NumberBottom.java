@@ -1,5 +1,6 @@
 package src;
 
+// 生成底部非地雷方格的数字
 public class NumberBottom {
     void newNumber(){
         for(int i = 1; i <= GameUtil.MAP_W; i++){
