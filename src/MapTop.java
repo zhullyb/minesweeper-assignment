@@ -246,7 +246,7 @@ public class MapTop {
         }
 
         // 绘制方块被按压时的帧动画
-        if (GameUtil.pressing && temp_x >= 1 && temp_y >= 1 && temp_x <= GameUtil.MAP_W && temp_y <= GameUtil.MAP_H){
+        if (GameUtil.pressing && temp_x >= 1 && temp_y >= 1 && temp_x <= GameUtil.MAP_W && temp_y <= GameUtil.MAP_H && GameUtil.DATA_TOP[temp_x][temp_y] == 0){
             g.drawImage(GameUtil.pressed,
                     GameUtil.OFFSET + (temp_x - 1) * GameUtil.SQUARE_LENGTH,
                     5 * GameUtil.OFFSET + (temp_y - 1) * GameUtil.SQUARE_LENGTH,
