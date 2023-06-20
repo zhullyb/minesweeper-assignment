@@ -94,6 +94,14 @@ public class GameWin extends JFrame {
     }
 
     public static void main(String[] args) {
+        // 从命令行读取扫雷的行数、列数、雷数以及缩放比例
+        if (args.length == 4) {
+            GameUtil.MAP_W = Integer.parseInt(args[0]);
+            GameUtil.MAP_H = Integer.parseInt(args[1]);
+            GameUtil.MINE_NUM = Integer.parseInt(args[2]);
+            GameUtil.RATE = Integer.parseInt(args[3]);
+        }
+
         GameWin gameWin = new GameWin();
         gameWin.launch();
     }

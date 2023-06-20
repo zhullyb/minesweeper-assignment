@@ -3,6 +3,10 @@ package src;
 import java.awt.*;
 
 public class MapTop {
+    {
+        GameUtil.generate_DATA_TOP();
+    }
+
     static int temp_x,temp_y;
 
     void reGame(){

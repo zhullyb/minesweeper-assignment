@@ -10,6 +10,7 @@ public class MapBottom {
     MineBottom mineBottom = new MineBottom();
     NumberBottom numberBottom = new NumberBottom();
     {
+        GameUtil.generate_DATA_BOTTOM();
         mineBottom.newMine();
         numberBottom.newNumber();
     }

@@ -34,7 +34,10 @@ public class GameUtil {
     // -2 代表踩雷
     // 0 代表空
     // 1-8 代表周围雷的数量
-    static int[][] DATA_BOTTOM = new int[MAP_W+2][MAP_H+2];
+    static int[][] DATA_BOTTOM;
+    static void generate_DATA_BOTTOM(){
+        DATA_BOTTOM = new int[MAP_W+2][MAP_H+2];
+    }
 
     // 顶部元素
     // -2 按压中
@@ -42,7 +45,10 @@ public class GameUtil {
     // 0 未翻开
     // 1 插旗
     // 2 插错旗
-    static int[][] DATA_TOP = new int[MAP_W+2][MAP_H+2];
+    static int[][] DATA_TOP;
+    static void generate_DATA_TOP(){
+        DATA_TOP = new int[MAP_W+2][MAP_H+2];
+    }
 
     // 载入图片
     static Image mine = Toolkit.getDefaultToolkit().getImage("resources/mine.png");
