@@ -1,4 +1,4 @@
-package src;
+package in.zhul.minesweeper;
 
 // 生成底部非地雷方格的数字
 public class NumberBottom {

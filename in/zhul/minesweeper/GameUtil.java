@@ -1,4 +1,4 @@
-package src;
+package in.zhul.minesweeper;
 
 /**
  * 工具类，储存游戏中的常量，并读入游戏素材

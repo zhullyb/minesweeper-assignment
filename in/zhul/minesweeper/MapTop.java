@@ -1,4 +1,4 @@
-package src;
+package in.zhul.minesweeper;
 
 /* 顶部类
  * 绘制顶部覆盖方格

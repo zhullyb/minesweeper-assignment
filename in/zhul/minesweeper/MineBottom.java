@@ -1,4 +1,4 @@
-package src;
+package in.zhul.minesweeper;
 
 /*
  * 生成地雷

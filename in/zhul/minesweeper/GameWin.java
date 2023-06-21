@@ -1,4 +1,4 @@
-package src;
+package in.zhul.minesweeper;
 
 /**
  * 扫雷游戏的主要逻辑

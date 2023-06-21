@@ -1,4 +1,4 @@
-package src;
+package in.zhul.minesweeper;
 
 /* 底层类
  * 负责绘制游戏底部的图像
