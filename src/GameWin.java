@@ -89,11 +89,11 @@ public class GameWin extends JFrame {
 
         while(true){
             repaint();
-            try {
-                Thread.sleep(40);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+            // try {
+            //     Thread.sleep(40);
+            // } catch (InterruptedException e) {
+            //     e.printStackTrace();
+            // }
         }
     }
 

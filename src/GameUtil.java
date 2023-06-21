@@ -9,7 +9,7 @@ import java.awt.*;
 public class GameUtil {
     static int MINE_NUM = 10;
     // 缩放比例，需要使用整数
-    static int RATE = 2;
+    static int RATE = 1;
     static int MAP_W = 9;
     static int MAP_H = 9;
     // 边框宽度(偏移量)
